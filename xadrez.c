@@ -1,32 +1,84 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+#include <stdio.h>
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+int main(){
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+//variaveis - peças do tabuleiro
+int torre = 1;
+int bispo = 1;
+int rainha = 1;
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+//Criando variaveis para menu
+int menu, menu2;
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+//Menu principal
+printf("Bem vindo ao Super Xadrez 2000...\n");
+printf("1 - Iniciar o Jogo.\n");
+printf("2 - Regras.\n");
+printf("3 - Sair do jogo.\n");
+printf("Por favor, digite a opção desejada...\n");
+scanf("%d", &menu);
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+switch (menu) // Menu de jogabilidade
+{
+case 1:
+printf("Vamos jogar!\n");
+printf("Quais peças voce quer mover?\n");
+printf("1 - Torre.\n");
+printf("2 - Bispo.\n");
+printf("3 - Rainha.\n");
+printf("4 - Sair.\n");
+scanf("%d", &menu2);
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    switch (menu2)
+    {
+    case 1: // movendo a torre com While
+    while (torre <= 5)
+    {
+        printf("Movendo para direita\n", torre);
+        torre++;
+    }
+    break;
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    case 2: // movendo o bispo com o DoWhile
+    do { 
+        printf("Movendo para Cima, Direita\n", bispo);
+        bispo++;
+    
+        } while (bispo <= 5 );
 
-    return 0;
+        {
+    }
+    break;
+    
+    case 3: // movendo a rainha com o For
+        for (rainha = 0; rainha < 8; rainha++)
+        printf("Movendo para esquerda\n");
+
+    break;
+
+    case 4: // Opcao para sair do jogo
+        printf("Saindo do jogo...");
+        break;
+    default: //caso alguma opcao seja invalida
+        printf("Opção Invalida!\n");
+        break;
+
+
+    }
+    break;
+case 2:
+    printf("Regras\n");
+    printf("Area em construção...\n");
+    break;
+case 3:
+    printf("Saindo do jogo...\n");
+default:
+    printf("Opção Invalida\n");
+    break;
+}
+
+return 0;
+
 }
